@@ -21,34 +21,6 @@ function FindProxyForURL(url, host) {
         return proxy;
     }
 
-    // Bloquear todos los dominios relacionados con anuncios de Twitter
-    if (shExpMatch(host, "*.ads-twitter.com") ||
-        shExpMatch(host, "*.cms-twdigitalassets.com") ||
-        shExpMatch(host, "*.periscope.tv") ||
-        shExpMatch(host, "*.pscp.tv") ||
-        shExpMatch(host, "*.t.co") ||
-        shExpMatch(host, "*.tellapart.com") ||
-        shExpMatch(host, "*.tweetdeck.com") ||
-        shExpMatch(host, "*.twimg.co") ||
-        shExpMatch(host, "*.twimg.com") ||
-        shExpMatch(host, "*.twimg.org") ||
-        shExpMatch(host, "*.twitpic.com") ||
-        shExpMatch(host, "*.twitter.biz") ||
-        shExpMatch(host, "*.twitter.com") ||
-        shExpMatch(host, "*.twitter.jp") ||
-        shExpMatch(host, "*.twittercommunity.com") ||
-        shExpMatch(host, "*.twitterflightschool.com") ||
-        shExpMatch(host, "*.twitterinc.com") ||
-        shExpMatch(host, "*.twitteroauth.com") ||
-        shExpMatch(host, "*.twitterstat.us") ||
-        shExpMatch(host, "*.twtrdns.net") ||
-        shExpMatch(host, "*.twttr.com") ||
-        shExpMatch(host, "*.twttr.net") ||
-        shExpMatch(host, "*.twvid.com") ||
-        shExpMatch(host, "*.vine.co")) {
-        return "PROXY";
-    }
-    
     // Default - Direct
     return "DIRECT";
 }
