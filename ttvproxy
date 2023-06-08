@@ -20,6 +20,11 @@ function FindProxyForURL(url, host) {
     if (shExpMatch(host, "passport.twitch.tv")) {
         return proxy;
     }
+    
+    // Twitter
+    if (shExpMatch(host, "twiter.com")) {
+        return proxy;
+    }
 
     // Default - Direct
     return "DIRECT";
