@@ -20,6 +20,14 @@ function FindProxyForURL(url, host) {
     if (shExpMatch(host, "passport.twitch.tv")) {
         return proxy;
     }
+
+    // Bloquear todos los dominios relacionados con anuncios de Twitter
+    if (shExpMatch(host, "*.twitter.com") ||
+        shExpMatch(host, "*.twimg.com") ||
+        shExpMatch(host, "*.t.co") ||
+        shExpMatch(host, "*.ads.twitter.com")) {
+        return proxy;
+    }
     
     // Default - Direct
     return "DIRECT";
