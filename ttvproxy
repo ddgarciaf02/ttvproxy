@@ -1,0 +1,26 @@
+function FindProxyForURL(url, host) {
+    var proxy = "PROXY 193.3.23.171:29032";
+    
+    // URL REGEX: ^https://usher.ttvnw.net/*/*/*/* - PROXY
+    if (/^https:\/\/usher\.ttvnw\.net\/.*\/.*\/.*\/.*/.test(url)) {
+        return proxy;
+    }
+    
+    // URL REGEX: ^https://video-weaver.*.hls.ttvnw.net - PROXY
+    if (/^https:\/\/video-weaver.*\.hls\.ttvnw\.net/.test(url)) {
+        return proxy;
+    }
+    
+    // Host wildcard: gql.twitch.tv - PROXY
+    if (shExpMatch(host, "gql.twitch.tv")) {
+        return proxy;
+    }
+    
+    // Host wildcard: passport.twitch.tv - PROXY
+    if (shExpMatch(host, "passport.twitch.tv")) {
+        return proxy;
+    }
+    
+    // Default - Direct
+    return "DIRECT";
+}
