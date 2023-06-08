@@ -21,11 +21,6 @@ function FindProxyForURL(url, host) {
         return proxy;
     }
     
-    // Twitter
-    if (shExpMatch(host, "twiter.com")) {
-        return proxy;
-    }
-
     // Default - Direct
     return "DIRECT";
 }
